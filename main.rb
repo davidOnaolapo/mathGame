@@ -5,7 +5,10 @@ require './player'
 
 
 questionx = Question.new
-puts questionx.answer;
+playerx = Player.new("Silas")
+
+playerx.process_answer(questionx, 5);
+puts playerx.lives_left
 
 
 
