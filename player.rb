@@ -6,5 +6,7 @@ class Player
     @name = name
     @lives_left = MAX_YEARS;
     @total_score = 0;
-  end 
+  end
+  
+  
 end

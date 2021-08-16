@@ -1,6 +1,12 @@
 require 'pp'
-require './Question'
-require './Game'
-require './Player'
+require './question'
+require './game'
+require './player'
+
+
+questionx = Question.new
+puts questionx.answer;
+
+
 
 
