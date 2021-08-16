@@ -1,7 +1,7 @@
 class Game
-  attr_accessor :name
-  def initialize(name)
-    @name = name
-  end 
-
+  attr_writer :curr_player, :players_involved
+  def initialize(players_involved)
+    @players_involved = players_involved
+    @curr_player = players_involved[0]
+  end
 end

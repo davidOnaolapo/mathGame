@@ -1,0 +1,23 @@
+#Math Game
+
+#---Class player --- 
+	class variable - MAX_YEARS = 3
+	attr_accessor :name 
+	attr_reader :lives_left :total_score
+	
+	methods calc_score
+	
+	instance variables - name, lives_left, total_score
+	
+#--- Class question ---
+	attr_reader :question, :answer, :diffculty
+	instance var - question, answer, difficulty
+	
+	methods: 
+	
+#---Class Game---
+	attr_writer:curr_player, players_involved
+	instance variables - players_involved[a Player, a Player], curr_player
+	
+	methods: render_question, game_over, round_over
+	
