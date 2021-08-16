@@ -14,11 +14,18 @@ class Session
     puts "Player 2, enter your name"
     player2_name = gets.chomp
     # c = a.to_i + b.to_i
-    puts player1_name
+    [player1_name, player2_name]
   end
 
   def lets_play(player1, player2)
     puts player1.name
+
+    # puts "Player 1, enter your name"
+    # player1_name = gets.chomp
+
+    # puts "Player 2, enter your name"
+    # player2_name = gets.chomp
+    # c = a.to_i + b.to_i
   end
 
 

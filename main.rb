@@ -13,7 +13,13 @@ require './session'
 # puts playerx.lives_left
 
 sessionX = Session.new
-sessionX.inquire
+players = sessionX.inquire
+
+player1 = Player.new(players[0])
+player2 = Player.new(players[1])
+
+sessionX.lets_play(player1, player2)
+
 
 
 
