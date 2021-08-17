@@ -1,5 +1,3 @@
-require './helpers'
-
 class Question
   attr_reader :question, :answer
   def initialize
@@ -8,8 +6,7 @@ class Question
   end
   
   def generate_question_vars
-    # [rand(100), rand(100)]
-    [2, 2]
+    [rand(20), rand(20)]
   end
   
   def generate_answer(to_add)

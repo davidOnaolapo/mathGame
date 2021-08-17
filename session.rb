@@ -1,10 +1,10 @@
+require './question'
+
 class Session
-  FIRST_ROUND = 1
-  attr_accessor :round, :game_over
+  attr_accessor :game_over
 
   def initialize
-    @round = FIRST_ROUND
-    @game_over = false;
+    @game_over = false; 
   end
 
   def inquire
@@ -17,15 +17,44 @@ class Session
     [player1_name, player2_name]
   end
 
-  def lets_play(player1, player2)
-    puts player1.name
+  def lets_play_round(player1, player2, game)
+    game_over_check = lets_play(player1, player2, game);
 
-    # puts "Player 1, enter your name"
-    # player1_name = gets.chomp
+    if game_over_check
+      self.game_over = true;
+      return
+    end
+      
+    lets_play(player2, player1, game);
+  end
 
-    # puts "Player 2, enter your name"
-    # player2_name = gets.chomp
-    # c = a.to_i + b.to_i
+  def lets_play(curr_player, other_player, game)
+    game.curr_player = curr_player
+
+    questionX = Question.new;
+
+    puts "#{curr_player.name}: What does #{questionX.question[0]} plus #{questionX.question[1]} equals?"
+    player_ans = gets.chomp
+    player_ans = player_ans.to_i
+    
+    if questionX.answer != player_ans
+      puts "Nope, really bro?"
+      game.reduce_life;
+    else 
+      puts "Correct!"
+    end
+
+    puts "#{curr_player.name}: #{curr_player.lives_left}/3 vs #{other_player.name}: #{other_player.lives_left}/3"
+
+    game_over_check = (curr_player.lives_left == 0)
+
+    if game_over_check
+      self.game_over = true;
+    else 
+      puts "--------NEW TURN---------"
+    end  
+    
+    return game_over_check
   end
 
 

@@ -6,10 +6,4 @@ class Player
     @name = name
     @lives_left = MAX_YEARS;
   end
-  
-  def process_answer(question_obj, user_answer) 
-    if (question_obj.answer != user_answer)
-      self.lives_left -= 1 
-    end
-  end
 end
