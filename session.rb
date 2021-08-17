@@ -53,10 +53,16 @@ class Session
     else 
       puts "--------NEW TURN---------"
     end  
-    
+
     return game_over_check
   end
 
+  def its_over(winner, loser)
+    puts "#{winner.name} wins with a score of #{winner.lives_left}/3"
+    puts "------------GAME OVER-------------"
+    puts "Thanks for playing!"
+
+  end
 
 
 
